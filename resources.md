@@ -10,10 +10,11 @@
 - [Asana](https://asana.com/)
 - [Gantt Chart Template](https://www.smartsheet.com/free-gantt-chart-excel-templates)
 
-## Articles
+## Articles & Guides
 
-## Other resource
+_(Add your favorite reads here)_
 
-[pmi.org](https://www.pmi.org/) - best for projecy, program and portfolio with free templates
+## Other Resources
 
-[Home | Scrum Guides](https://scrumguides.org/index.html), [Resource Search | Scrum.org](https://www.scrum.org/resources) - scrum resources, template, documentation
+- [PMI](https://www.pmi.org/) — Project, program, and portfolio resources with free templates
+- [Scrum Guide](https://scrumguides.org/index.html), [Scrum.org Resources](https://www.scrum.org/resources) — Scrum frameworks, guides, templates, and documentation
