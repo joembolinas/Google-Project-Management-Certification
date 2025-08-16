@@ -1,0 +1,5 @@
+{
+    "editor.wordWrap": "on",
+    "files.autoSave": "afterDelay",
+    "markdown.preview.breaks": true
+}
