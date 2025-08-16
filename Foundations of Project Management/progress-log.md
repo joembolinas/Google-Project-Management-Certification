@@ -1,4 +1,3 @@
-
 # [Welcome to the Google Project Management Certificate](https://www.coursera.org/learn/project-management-foundations/lecture/t28f8/welcome-to-the-google-project-management-certificate?trk_ref=coach_copy)  Aug 16, 2025
 
 This course provides an introduction to the fundamentals of project management, aimed at helping learners develop essential skills for entry-level project management roles.
@@ -41,8 +40,6 @@ Organizational Impact
 
 ---
 
-
-
 # [Introduction to Course 1](https://www.coursera.org/learn/project-management-foundations/lecture/q3E8l/introduction-to-course-1?trk_ref=coach_copy)  Aug 16, 2025
 
 This course provides an overview of project management fundamentals and prepares learners for entry-level roles in the field.
@@ -63,8 +60,6 @@ This course provides an overview of project management fundamentals and prepares
 * Compares various project management methodologies and their effectiveness in different scenarios.
 
 ---
-
-
 
 # [Get started with your Google Project Management Certificate](https://www.coursera.org/learn/project-management-foundations/lecture/1YqZr/get-started-with-your-google-project-management-certificate?trk_ref=coach_copy)  Aug 16, 2025
 
@@ -88,8 +83,6 @@ Tips for Success
 
 ---
 
-
-
 # [Helpful resources to get started](https://www.coursera.org/learn/project-management-foundations/supplement/qaLq3/helpful-resources-to-get-started?trk_ref=coach_copy)  Aug 16, 2025
 
 The content provides an overview of the Google Project Management Certificate program, focusing on key aspects of the course structure and helpful habits for success.
@@ -110,8 +103,6 @@ Helpful Habits for Success
 * Engage with other learners and update your Coursera profile to enhance networking opportunities.
 
 ---
-
-
 
 # [What is project management?](https://www.coursera.org/learn/project-management-foundations/lecture/3wYYw/what-is-project-management?trk_ref=coach_copy)  Aug 16, 2025
 
@@ -138,8 +129,6 @@ This course item content focuses on defining projects and project management, hi
 
 ---
 
-
-
 # [What does a project manager do?](https://www.coursera.org/learn/project-management-foundations/lecture/eBWHU/what-does-a-project-manager-do?trk_ref=coach_copy)  Aug 16, 2025
 
 "*In broad terms, a project manager also needs to make sure that the project outcome is bringing value to the company"*
@@ -162,8 +151,6 @@ Budgeting and Cost Control
 
 ---
 
-
-
 # [Transferable project management skills](https://www.coursera.org/learn/project-management-foundations/lecture/TQb9o/transferable-project-management-skills?trk_ref=coach_copy)  Aug 16, 2025
 
 The course content focuses on the foundational skills and experiences relevant to project management.
@@ -183,8 +170,6 @@ Next Steps in Learning
 * The course will further explore various project management roles and job opportunities available after completing the program.
 
 ---
-
-
 
 # [X: Path to becoming a project manager](https://www.coursera.org/learn/project-management-foundations/lecture/Srixo/x-path-to-becoming-a-project-manager?trk_ref=coach_copy)  Aug 16, 2025
 
@@ -230,8 +215,6 @@ the speaker said, they love what job she has as a Program management, because no
 
 ---
 
-
-
 # [From certificate to career success](https://www.coursera.org/learn/project-management-foundations/lecture/d03Fw/from-certificate-to-career-success?trk_ref=coach_copy)  Aug 16, 2025
 
 This course content focuses on the career opportunities available in project management and the skills required to succeed in this field.
@@ -255,9 +238,6 @@ As you progress through the program, consider the types of roles that interest y
 
 ---
 
-
-
-
 # [Explore project management roles](https://www.coursera.org/learn/project-management-foundations/supplement/fXLY5/explore-project-management-roles?trk_ref=coach_copy)  Aug 16, 2025
 
 This course material outlines the various career paths available in project management and the skills required for each role.
@@ -277,8 +257,7 @@ Program and portfolio management roles
 * Program Managers oversee multiple related projects, while Portfolio Managers manage a collection of projects and programs across an organization.
 * These positions involve strategic decision-making and coordination to ensure alignment with organizational goals.
 
-
-Project management roles organized by hierarchy:
+# Project management roles organized by hierarchy:
 
 * **Entry-Level Roles:**
   * Project Support Specialist
@@ -305,3 +284,152 @@ Project management roles organized by hierarchy:
   * Product Owner
 
 This hierarchy reflects the progression from entry-level positions to more advanced roles in project management.
+
+# Key Roles
+
+* Planning - Developing a detailed project plan that outlines tasks, timelines, and resources needed to achieve project goals.
+* Organizing - Coordinating Team and resources,  mke sure alligned and working towards the Objectives
+* Leading -Guiding the project, collab, resolve conflict, maintain good environment
+* Monitoring and controling - tracking progress, managing risk, making adjustment if needed, to keep on time within  budget
+* Communicating - good service in all stekholder, providing updte, informing the development of project
+* Closing - finalizing the project , ensure all deliverable are meet, always double checking, after-sales, post-project evaluate, learn from the experience and identify leason learned
+
+---
+
+# [Finding the perfect role](https://www.coursera.org/learn/project-management-foundations/lecture/dHYpq/finding-the-perfect-role?trk_ref=coach_copy)  Aug 16, 2025
+
+This course material focuses on job searching in the project management field, providing insights on how to effectively identify and apply for relevant positions.
+
+Understanding Job Listings
+
+* Job listings often contain buzzwords like "data-driven" and "team player," which can help you assess if a position aligns with your skills.
+* Project management is frequently listed as a skill, opening up various job opportunities beyond just project manager titles.
+
+Exploring Job Titles
+
+* Keep an open mind when job hunting; consider roles like Operations Manager, Program Manager, or Project Assistant that utilize project management skills.
+* Job descriptions may reveal that many roles require similar skills, such as organizational management and communication.
+
+Networking and Experience
+
+* Networking is crucial in job searching, allowing you to connect with professionals and learn about opportunities.
+* Reflect on your past experiences, as they may provide relevant project management skills applicable to various roles.
+
+---
+
+# [Gilbert: Project management skills in my role](https://www.coursera.org/learn/project-management-foundations/lecture/z2Tzs/gilbert-project-management-skills-in-my-role?trk_ref=coach_copy)  Aug 16, 2025
+
+![1755340643831](image/progress-log/1755340643831.png)
+
+The content focuses on the role of a talent outreach specialist at Google and the essential skills for project management.
+
+Talent Outreach and Project Management
+
+* The specialist identifies and engages talent that may not have previously considered opportunities at Google.
+* Project management skills are crucial in various roles, including communication, budget management, and timeline organization.
+
+Transferable Skills and Personal Growth
+
+* Skills learned in unrelated jobs, such as retail, can be applied to project management roles.
+* Practicing project management frameworks in personal and professional settings builds confidence and competence.
+
+Seeking Support and Overcoming Challenges
+
+* Taking the first step in learning project management is vital, and learners should not let fear hinder their progress.
+* Asking for help and conducting informational interviews can provide valuable insights and support in career development.
+
+---
+
+
+
+# Using buzzwords in your job search
+
+*You can save this reading for future reference. Feel free to download a PDF version of this reading below:*
+
+[](https://www.coursera.org/api/rest/v1/asset/download/pdf/WWLypDpZTBmi8qQ6WZwZAA?pageStart=&pageEnd=)
+
+You now know how to start searching for project management jobs! Job searching can be a time of self-reflection, growth, and excitement. Add a career path change into the mix, and it can also seem intimidating. We are about to give you some tips to help you in your job search efforts, including introducing you to some common buzzwords and skills that commonly appear in job descriptions.
+
+![Image of magnifying glass](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/d2dFP_DmQ46nRT_w5rOOeg_c0c72afbb62a4e68aee09a6fd8ce26f1_Screen-Shot-2021-03-31-at-3.00.31-PM.png?expiry=1755475200000&hmac=Aby1M767BZWp285Op8aoOJUGdeQE1-dUFRRBFVEPisA)
+
+## **Using buzzwords and skills in your job search**
+
+In an earlier video, we mentioned **buzzwords**—words or phrases that are popular for a period of time or in a particular industry. In today’s job market, buzzwords like data-driven, team player, and self-starter are common. You may see terms like these show up throughout your searches.
+
+Similarly, many job descriptions list the specific skills they require candidates to have. These skills can become some of the terms that you use in your job search. Examples of these skills include:
+
+* **Coordination**, or getting people and teams to work together. You may see responsibilities in job descriptions such as “coordination of efforts to achieve project deliverable” or “coordinate internal resources to ensure successful project completion.” Being a project manager is essentially managing the coordination of resources to achieve your end goal. Coordination is one of the top skills a project manager should have, so searching for this term can lead you to appropriate positions.
+* **Organization**, or the ability to stay focused on different tasks. You may come across phrases like “solid organizational skills, including attention to detail and multitasking skills” or something as simple as “highly organized.” Organization is key to being a great project manager. We will discuss many ways to sharpen this skill in the upcoming lessons.
+* **Leadership**, or being able to lead a group of people. You may see phrases like “strong leadership qualities” or “ability to lead” in job descriptions. A project manager needs to display leadership in a number of ways, including effective planning, efficient task coordination, inspiring team members, and key decision-making. You are working on many of the skills needed to become a great leader in this program!
+
+Take a look at the skills required for this position. The job description lists each of the terms that we talked about or a variation of these terms.
+
+![Project Manager Example:](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/AKpnH47QRreqZx-O0Ba32A_d0b12f26b7df4e6d86217f0215fd6b35_Screen-Shot-2021-02-23-at-5.43.33-PM.png?expiry=1755475200000&hmac=Ul6OZaT6xMdEmegACz7dgDe_DfldSm9ai2EmSF26Ybg)
+Excellent time management, prioritization, and organizational skills
+Demonstrated ability to lead others
+Outstanding communication skills
+Successful track record in coordinating the work of internal and external teams to develop new products
+
+You may also come across positions in your search that do not include the title “Project Manager” or any of the job titles we previously discussed, but you shouldn’t rule these positions out. In many cases, the job description will include project management experience and expectations, but the position may be called something else entirely.
+
+Look at some of the job responsibilities required for a position titled “Operations Associate.” This position is a type of project manager. You will find that most project management-related job descriptions call for the **ability to plan**, **organize**,** monitor**, and** execute tasks**—all skills you will be able to do once you complete this certification.
+
+![Operations Associate Example](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/MW-ogrvPR8GvqIK7zzfBYA_fd83639f8abc4fec8dd68a1ff7722c58_Screen-Shot-2021-02-23-at-5.42.50-PM.png?expiry=1755475200000&hmac=Jg_iET_L2AhqWsQw22EhpHnCe3g4BTIthfpzebsfIrY)
+Plan and organize team objectives and priorities
+Develop and execute reporting and process design
+Monitor daily operations and enhance processes to maximize efficiency
+Coordinate training plans
+
+## **Common project management buzzwords**
+
+Including buzzwords and skills in your job search can help you find jobs that are ideal for you and your skill set. Once you have found a position you want to apply for, listing buzzwords and skills that are relevant to the position can also help recruiters and hiring managers identify you as a qualified and knowledgeable candidate.
+
+Some common project management-related buzzwords and skills you could include on your resume are:
+
+* Analytical
+* Assertive
+* Assessing outcomes
+* Assessing progress
+* Attention to detail
+* Conflict resolution
+* Collaborative
+* Coordination
+* Communication
+* Development
+* Evaluation
+* Executing plans
+* Financial analysis
+* Impact assessment
+* Leadership engagement
+* Managing meetings
+* Managing client expectations
+* Managing conflicts
+* Managing relationships with stakeholders
+* Managing vendors
+* Meeting deadlines
+* Monitoring
+* Multitasking
+* Planning
+* Prioritizing
+* Problem-solving
+* Process development
+* Process improvement
+* Project coordination
+* Project implementation
+* Project initialization
+* Project planning
+* Project reporting
+* Quality control
+* Risk assessment
+* Risk management
+* Solution development
+* Strategic planning
+* Strong interpersonal skills
+* Strong verbal communication
+* Strong written communication
+
+## **Key takeaway**
+
+Job searching for your first (or next) project management position can be easier if you enter the right search terms. Search for the skills you’re learning throughout this project management certificate program or skills you’ve acquired in your current or previous positions. These terms will help you determine if you have found a potential match. As you start your project management career, don’t let the requirement for project management experience stop you from applying for project management-adjacent roles. Once you have completed this certification course, you'll see how many skills you already have that can be translated and correlated to a project management role.
+
+---
