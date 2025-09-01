@@ -28,6 +28,15 @@ Purpose: This repo is a structured personal learning project for completing the 
 - Avoid duplicating the same concept in multiple curated files—reference instead (e.g., link to `setup.md` instead of restating process steps elsewhere). New course/module summaries should go in `1_Project_Files/03_Execution/Course_Notes/`; if updating an older `notes/` file, add a brief "Superseded by: <new file>" line at top.
 - Preserve emoji already used (e.g., section icons) but do not introduce inconsistent styling.
 
+### Sources & Traceability (Updated 2025-09-01)
+- Each module section in course notes must include a plain `Sources:` line (no heading hashes) followed by markdown list items where each item contains exactly one backticked relative path to a numbered raw transcript (`src/...`).
+- Legacy aggregate transcript files (single number + `.md` like `2.md`) are prohibited; if encountered they must be renamed to `<module>-legacy-compilation.md` (no leading number) with a supersession note so validation ignores them.
+- Missing transcripts must use naming pattern `<module>.<n>.MISSING.txt` and are never cited (structural placeholders only).
+- Subtitle / assessment dumps should not be cited; instead list them under an `Uncited Raw Artifacts` subsection immediately after the cited Sources list for transparency (retain numeric ordering in filenames).
+- Validation script classification categories: `MISSING_PLACEHOLDER`, `SUBTITLES`, `ASSESSMENT`, `OTHER` are used to summarize uncited raw artifacts.
+- Acceptable heading variants the script recognizes: `Sources:` inline or `## Sources` (prefer the inline `Sources:` form to minimize noise).
+- When adding new transcripts ensure UTF-8 characters (apostrophes, dashes) are preserved to avoid path encoding mismatches (e.g., smart apostrophes) that can trigger false "Missing" reports.
+
 ## Safe Automation Boundaries
 - Assistants may: add new dated progress entries, summarize transcript chunks into structured notes, standardize formatting (headings, tables), add new resource links (grouped).
 - Assistants must NOT: delete raw `src/` transcripts, move / reorder numbered transcript files arbitrarily, overwrite reflective journals with generated summaries, introduce executable code/tooling not already adopted (build systems, CI), fabricate progress not achieved, re-populate the now-archived `notes/` path, or remove placeholder sections in new `Course_Notes` stubs without replacing them with real content.

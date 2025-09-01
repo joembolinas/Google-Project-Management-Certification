@@ -1,0 +1,48 @@
+Incident: Source Validation Gaps & Legacy Aggregate File
+Date: 2025-09-01
+
+Summary:
+Validation script initially reported low referenced transcript count and numbering gaps due to:
+1. Presence of legacy aggregated file `src/Course1-Module2/2.md` mixing multiple Module 2 transcripts (inflated numbering logic).
+2. Inconsistent handling of Sources blocks (blank line + heading variations) causing partial parsing.
+3. Missing Module 1 index (1.5) without placeholder, triggering intra-module numbering gap.
+4. Subtitle / assessment artifacts and missing placeholder not clearly categorized, obscuring actionable unreferenced list.
+5. UTF-8 smart apostrophe mismatch surfaced in path normalization for 2.7 file name (apostrophe encoding difference in validation output).
+
+Actions Taken:
+- Added structural placeholder `src/Course1-Module1/1.5.MISSING.txt` to close numbering gap.
+- Renamed aggregate `2.md` strategy: created `module2-legacy-compilation.md` (non-numbered). Attempted direct deletion of `2.md`; lingering due to tooling; script now excludes numeric single-dot aggregates from counting.
+- Enhanced `Validate-Sources.ps1`:
+  * Flexible Sources heading regex (inline or h2 variant).
+  * Blank-line tolerance after Sources.
+  * Exclusion of aggregate pattern ^\d+\.md$ from transcript set.
+  * Intra-module index gap detection on second numeric segment (ignoring .0 overview).
+  * Classification of unreferenced items: MISSING_PLACEHOLDER, SUBTITLES, ASSESSMENT, OTHER.
+  * Categorized summary appended to report.
+- Added Uncited Raw Artifacts subsection after Module 1 Sources for transparency.
+- Updated `.github/copilot-instructions.md` with explicit governance for sources, aggregates, classification, and placeholders.
+
+Current Status (Post-Remediation Validation):
+- Numbering gaps: none.
+- Referenced transcripts: 25 / 30.
+- Unreferenced categories: MISSING_PLACEHOLDER (1), SUBTITLES (2), OTHER (3), ASSESSMENT (0). Remaining OTHER items pending synthesis (1.11, 1.12, plus one Module 2 transcript flagged due to apostrophe encoding discrepancy).
+- Legacy aggregate `2.md` still present physically; functionally ignored. Next step is manual filesystem removal or retention with explicit deprecation header (pending tool success).
+
+Root Causes:
+- Early capture workflow produced an aggregate file before granular ingestion rule stabilized.
+- Lack of enforced placeholder naming for missing sequence numbers.
+- Script initially coupled to strict formatting (single pattern for Sources and no categorization logic).
+
+Lessons Learned:
+- Establish explicit rule forbidding numbered aggregate markdown upfront.
+- Introduce placeholder files immediately when a gap is detected rather than retrofitting later.
+- Classifying unreferenced artifacts reduces cognitive load in triage.
+- Normalize UTF-8 path characters during both capture and validation to avoid false missing entries.
+
+Follow-Up Actions:
+- Remove `src/Course1-Module2/2.md` once deletion tooling allows, or prepend a deprecation header if retention required.
+- Synthesize Module 1 remaining transcripts (1.11, 1.12) and update Sources; then re-run validation to drop OTHER count.
+- Decide policy for retaining subtitle aggregates long-term (possible future exclusion flag in script).
+- Add automated UTF-8 normalization check (future enhancement).
+
+Prepared By: automated assistant
