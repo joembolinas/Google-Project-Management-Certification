@@ -7,9 +7,17 @@
 #>
 [CmdletBinding()]
 param(
-    [string]$RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
+    [string]$RepoRoot
 )
 $ErrorActionPreference = 'Stop'
+if (-not $RepoRoot) {
+    if ($PSScriptRoot) {
+        $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
+    } else {
+        $candidate = Get-Location
+        if (Test-Path (Join-Path $candidate 'scripts')) { $RepoRoot = $candidate.Path } else { $RepoRoot = (Resolve-Path '..').Path }
+    }
+}
 $srcRoot = Join-Path $RepoRoot 'src'
 $glossFile = Join-Path $RepoRoot 'glossary.md'
 

@@ -1,0 +1,5 @@
+Placeholder for missing transcript 1.5.
+
+Reason: Numbering continuity requires a 1.5 entry between existing 1.4 and 1.6 files. Original source asset was not captured or did not exist separately. Added on 2025-09-01 for traceability.
+
+Do not cite for content; serves only as structural placeholder.
