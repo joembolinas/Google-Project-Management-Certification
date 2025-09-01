@@ -1,0 +1,344 @@
+{
+  "version": "1.0",
+  "last_updated": "2025-09-01",
+  "purpose": "Authoritative machine-readable workflow map guiding AI actions from raw intake (src/) to curated artifacts (1_Project_Files/) with quality gates.",
+  "governance_principles": [
+    "Raw first: every new learning artifact begins in src/ before curation.",
+    "Traceability: curated summaries must cite exact raw filenames.",
+    "Append-only for logs and journals (no rewrite of historical reflections).",
+    "Minimal diffs; preserve numbering and file naming conventions.",
+    "No verbatim transcript blocks moved to curated/public-facing files."
+  ],
+  "directories": {
+    "src": {
+      "role": "Raw intake transcripts, notes, placeholders",
+      "filenaming_pattern": "<module>.<sequence>.<Title>.(txt|md)",
+      "immutability_rules": "Do not delete or reorder; only normalize obvious typos before citation."
+    },
+    "1_Project_Files/03_Execution/Course_Notes": {
+      "role": "Structured synthesized course/module knowledge",
+      "sections_expected": ["Module Overview", "Key Concepts", "Definitions", "Tools/Techniques", "Roles & Responsibilities", "Soft Skills / Mindsets", "Examples / Scenarios", "Sources", "Module Reflection"]
+    },
+    "1_Project_Files/03_Execution/Weekly_Project_Journal.md": {
+      "role": "Week-based reflections; module reflections embedded in current week",
+      "append_strategy": "Newest week at top inserted via Add-JournalWeek script when a new calendar week starts"
+    },
+    "1_Project_Files/02_Planning/Project_Plan.md": {
+      "role": "Baseline + schedule + variance/change log + progress checklists",
+      "update_events": ["Module completion", "Schedule variance > threshold", "Course completion"]
+    },
+    "1_Project_Files/02_Planning/Risk_Register.md": {
+      "role": "Active risks with scoring and response strategy",
+      "update_events": ["Recurring blocker detected", "Mitigation complete", "Weekly review"]
+    },
+    "1_Project_Files/04_Closing/Lessons_Learned_Report_Blog_Draft.md": {
+      "role": "Accumulating narrative & snapshots per module/course",
+      "update_events": ["Module completion snapshot", "Course completion summary"]
+    },
+    "progress-log.md": {
+      "role": "High-level chronological meta progress log (top insertion)",
+      "granularity": "Daily/weekly significant events"
+    },
+    "glossary.md": {
+      "role": "Central term definitions derived from #gloss tags & summaries",
+      "update_events": ["Module synthesis", "Glossary extraction script run"]
+    },
+    "ARTIFACT_INDEX.md": {
+      "role": "Canonical catalog of artifacts & last updated timestamps",
+      "update_events": ["Artifact content meaningfully updated", "New artifact added"]
+    }
+  },
+  "scripts": {
+    "Add-JournalWeek.ps1": {
+      "purpose": "Insert next week template block in Weekly_Project_Journal",
+      "run_when": "First study session of a new calendar week before adding entries",
+      "inputs": ["-StartDate (optional)"],
+      "outputs": ["New week heading at top"]
+    },
+    "Validate-Sources.ps1": {
+      "purpose": "Detect uncited transcripts or cited files missing from src",
+      "run_when": "Before committing a module synthesis",
+      "outputs": ["Report listing orphan or unused transcripts"]
+    },
+    "Glossary-Extract.ps1": {
+      "purpose": "Parse #gloss:<term> tags and propose glossary additions",
+      "run_when": "After module synthesis or before weekly checkpoint",
+      "outputs": ["Suggested new glossary entries"]
+    },
+    "Risk-Aging-Report.ps1": {
+      "purpose": "Highlight stale or high-severity risks lacking recent updates",
+      "run_when": "Weekly checkpoint or before major milestone commit",
+      "outputs": ["Aging risk list"]
+    },
+    "Export-PublicSnapshot.ps1": {
+      "purpose": "Stage sanitized ‘dist/’ excluding raw transcripts for potential public repo",
+      "run_when": "Optional after module or course completion",
+      "excludes": ["src/**", "archive/**", "raw-only images unless curated"]
+    },
+    "PrePushGuard.ps1": {
+      "purpose": "Abort push if repo visibility/public safety preconditions fail",
+      "run_when": "Pre-push hook (manual setup required)",
+      "policy": "Block if visibility=public AND src/ contains raw transcripts"
+    }
+  },
+  "states": [
+    {
+      "id": "per_lecture_capture",
+      "trigger": "New lecture/video/reading consumed",
+      "required_inputs": ["Transcript text", "Module number"],
+      "actions": [
+        "Save transcript as numbered file in src/",
+        "Inline mark unclear items with '??'",
+        "Tag potential glossary terms with #gloss:<term>"
+      ],
+      "outputs": ["New raw file committed (optional batched)", "Updated raw transcript inventory"],
+      "next": ["micro_block"]
+    },
+    {
+      "id": "micro_block",
+      "trigger": "Every 2-3 transcripts captured",
+      "actions": [
+        "Skim new transcripts; bold 1–3 high-value definitions in place",
+        "Add Mini Capture bullets under current module section in Course_1_Foundations.md",
+        "Queue emerging repeated issue as provisional risk (not yet formalized)"
+      ],
+      "outputs": ["Mini Capture bullets", "Enhanced raw emphasis"],
+      "next": ["per_lecture_capture", "module_synthesis"]
+    },
+    {
+      "id": "module_synthesis",
+      "trigger": "All intended module transcripts present or sufficient for synthesis",
+      "preconditions": [
+        "All module raw files numbered sequentially",
+        "Mini Capture list exists"
+      ],
+      "actions": [
+        "Transform Mini Capture bullets into structured module sections",
+        "Create or update Sources listing every cited filename",
+        "Draft Module Reflection (What Clicked / Challenge / Adjustment)"
+      ],
+      "quality_gates": [
+        "No empty required section (allow Tools/Techniques omission if none)",
+        "Each concept traceable to at least one Source",
+        "No verbatim multi-line transcript copy"
+      ],
+      "outputs": ["Updated Course_1_Foundations.md module section"],
+      "next": ["validation_phase"]
+    },
+    {
+      "id": "validation_phase",
+      "trigger": "Module synthesis draft completed",
+      "actions": [
+        "Run Validate-Sources.ps1",
+        "Run Glossary-Extract.ps1 and merge new terms",
+        "Run Risk-Aging-Report.ps1 and update any stale risks",
+        "Paraphrase check pass"
+      ],
+      "decision_points": [
+        "If uncited transcripts exist → add or mark intentionally unused",
+        "If glossary duplicates appear → consolidate instead of adding"
+      ],
+      "outputs": ["Clean validation report", "Updated glossary", "Updated risk register"],
+      "next": ["logging_phase"]
+    },
+    {
+      "id": "logging_phase",
+      "trigger": "Validation complete",
+      "actions": [
+        "Append module reflection into current week block in Weekly_Project_Journal",
+        "Add top entry in progress-log.md summarizing module completion",
+        "Update Project_Plan.md progress % and variances",
+        "Adjust Risk_Register.md (add/close/score changes)",
+        "Add Module Snapshot bullets to Lessons_Learned_Report_Blog_Draft.md",
+        "Update ARTIFACT_INDEX.md last updated timestamp for affected artifact"
+      ],
+      "outputs": [
+        "Journal updated",
+        "Progress log entry",
+        "Revised plan & risk register",
+        "Lessons learned snapshot"
+      ],
+      "next": ["optional_public_snapshot", "next_module_prep"]
+    },
+    {
+      "id": "optional_public_snapshot",
+      "trigger": "Desire to prepare sanitized export",
+      "condition": "Export-PublicSnapshot.ps1 available",
+      "actions": [
+        "Run Export-PublicSnapshot.ps1",
+        "Review dist/ for accidental raw leakage"
+      ],
+      "outputs": ["dist/ snapshot ready"],
+      "next": ["commit_phase"]
+    },
+    {
+      "id": "commit_phase",
+      "trigger": "All logging & optional snapshot complete",
+      "actions": [
+        "Stage curated changes (excluding unintended raw edits)",
+        "Use granular commit messages (feat/moduleX, docs/journal, chore/risk)",
+        "Run PrePushGuard (if hook installed)",
+        "Push to remote"
+      ],
+      "outputs": ["Remote updated"],
+      "next": ["next_module_prep"]
+    },
+    {
+      "id": "next_module_prep",
+      "trigger": "Module completion committed",
+      "actions": [
+        "Insert empty Module N+1 section skeleton in Course_1_Foundations.md",
+        "Create placeholder transcript filenames if schedule known",
+        "Add Week section if crossing week boundary next session"
+      ],
+      "outputs": ["Prepared scaffolding for next module"],
+      "next": ["per_lecture_capture"]
+    },
+    {
+      "id": "weekly_checkpoint",
+      "trigger": "First study session of a new calendar week",
+      "actions": [
+        "Run Add-JournalWeek.ps1 (if needed)",
+        "Review plan variance; re-baseline if variance > threshold",
+        "Run Risk-Aging-Report.ps1",
+        "Run Glossary-Extract.ps1 (incremental)",
+        "Prune or consolidate redundant glossary entries"
+      ],
+      "outputs": ["Fresh week journal block", "Updated plan adjustments"],
+      "next": ["per_lecture_capture"]
+    },
+    {
+      "id": "course_completion",
+      "trigger": "All modules in course synthesized and reflected",
+      "actions": [
+        "Finalize Course Snapshot in Lessons_Learned_Report_Blog_Draft.md",
+        "Update README milestone checkbox",
+        "Re-baseline Project_Plan for next course",
+        "Export public snapshot (optional)",
+        "Add course completion entry to progress-log.md"
+      ],
+      "outputs": ["Course completion logged", "Plan re-baselined"],
+      "next": ["next_course_init"]
+    }
+  ],
+  "quality_gates": {
+    "module": [
+      "All sections present or intentionally omitted with note",
+      "Every Key Concept has at least one cited Source filename",
+      "No verbatim paragraph-scale transcript copied",
+      "Glossary updated without duplicate definitions"
+    ],
+    "weekly": [
+      "Risk register reviewed",
+      "Open High risks have updated Next Review date",
+      "Plan variance assessed"
+    ],
+    "pre_commit": [
+      "Validate-Sources shows zero uncited used transcripts",
+      "No accidental deletions in src/",
+      "No large binaries added at root"
+    ]
+  },
+  "risk_rules": {
+    "new_risk_trigger": [
+      "Same blocker appears in 2 consecutive sessions",
+      "Schedule slip > 7 days vs baseline",
+      "Rework > 15% of planned tasks for module"
+    ],
+    "aging_threshold_days": 14,
+    "auto_close_criteria": [
+      "Mitigation implemented and no recurrence across 2 weeks"
+    ]
+  },
+  "glossary_update_rule": "Add term only once; if reintroduced, reference original term without redefining. Origin tag (e.g., [M2]) appended on first creation.",
+  "commit_patterns": {
+    "module_synthesis": "feat(module2): synthesize & reflect (Course 1 Foundations)",
+    "journal_update": "docs(journal): add week reflection YYYY-MM-DD",
+    "plan_variance": "chore(plan): update schedule variance after module2",
+    "risk_update": "chore(risk): refresh risk register aging review",
+    "glossary": "docs(glossary): add terms from module2",
+    "snapshot_export": "build(export): generate sanitized public snapshot"
+  },
+  "decision_points": {
+    "missing_transcript": "Insert placeholder filename with -MISSING tag; proceed if concept coverage adequate; flag in progress-log entry.",
+    "schedule_slip_rebaseline": "If slip > 7 days -> update baseline dates & document in Project_Plan Change Log",
+    "unused_transcripts": "If still unused after module synthesis validation → list under 'Additional Unreferenced Sources' or confirm intentional omission"
+  },
+  "checklists": {
+    "module_completion": [
+      "[ ] Mini Capture bullets transformed",
+      "[ ] Sections populated",
+      "[ ] Sources complete",
+      "[ ] Validate-Sources clean",
+      "[ ] Glossary terms merged",
+      "[ ] Reflection added to Journal",
+      "[ ] Plan % updated",
+      "[ ] Risks updated",
+      "[ ] Lessons Learned snapshot added",
+      "[ ] ARTIFACT_INDEX timestamp updated",
+      "[ ] progress-log entry added",
+      "[ ] Commits pushed"
+    ],
+    "weekly_checkpoint": [
+      "[ ] New week header (if boundary)",
+      "[ ] Plan variance reviewed",
+      "[ ] Risk aging reviewed",
+      "[ ] Glossary extraction run",
+      "[ ] progress-log top entry (if notable events)"
+    ],
+    "course_completion": [
+      "[ ] All modules synthesized",
+      "[ ] Course snapshot added",
+      "[ ] README milestone updated",
+      "[ ] Re-baseline next course",
+      "[ ] Optional export snapshot reviewed",
+      "[ ] Final course completion log entry"
+    ]
+  },
+  "automation_order": {
+    "module_flow": [
+      "Validate-Sources.ps1",
+      "Glossary-Extract.ps1",
+      "Risk-Aging-Report.ps1",
+      "Add-JournalWeek.ps1 (conditional)",
+      "Export-PublicSnapshot.ps1 (optional)",
+      "PrePushGuard.ps1 (hook)"
+    ]
+  },
+  "traceability_model": {
+    "source_citation": "Each curated concept references at least one src/<module>/<file> filename in Sources block",
+    "glossary_linking": "Course notes re-link to glossary term instead of redefining",
+    "risk_reference": "Journal may mention risk IDs; risk register holds authoritative detail"
+  },
+  "public_export_policy": {
+    "allowed": ["README.md", "Project_Charter.md", "Project_Plan.md (minus sensitive notes)", "Risk_Register.md (sanitize if needed)", "Course_Notes (paraphrased)", "Lessons_Learned_Report_Blog_Draft.md (only original text)", "ARTIFACT_INDEX.md", "glossary.md"],
+    "excluded": ["src/**", "archive/**", "raw subtitle dumps", "progress-log internal sensitive lines (optional)"]
+  },
+  "next_module_scaffold_template": {
+    "sections": [
+      "### Module N Overview",
+      "#### Key Concepts",
+      "#### Definitions",
+      "#### Tools / Techniques",
+      "#### Roles & Responsibilities",
+      "#### Soft Skills / Mindsets",
+      "#### Examples / Scenarios",
+      "#### Sources",
+      "#### Module Reflection"
+    ]
+  },
+  "integrity_checks": {
+    "filename_pattern_regex": "^[0-9]+\\.[0-9]+\\..+\\.(txt|md)$",
+    "duplicate_number_detection": "Flag if more than one file shares identical numeric prefix"
+  },
+  "metrics": {
+    "module_progress_percent_formula": "synthesized_modules / total_modules_in_course * 100",
+    "risk_health_indicator": "count_open_high + count_open_medium",
+    "glossary_growth": "new_terms_this_module"
+  },
+  "alerts": {
+    "high_risk_unupdated": "If high risk last_review_age_days > aging_threshold_days => escalate in next journal entry",
+    "glossary_backlog": "If >5 #gloss tags uncaptured after module synthesis => run Glossary-Extract before next capture session"
+  },
+  "end_of_file": true
+}
