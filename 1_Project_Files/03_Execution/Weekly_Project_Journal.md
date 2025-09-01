@@ -1,5 +1,23 @@
 # Weekly Project Journal
 
+### Week 2: 2025-08-31 - 2025-09-06
+
+* Tasks Completed:
+  * Completed Course 1 Module 2 (value of PM, roles/responsibilities, interpersonal skills, cross-functional dynamics).
+  * Synthesized Module 2 structured notes with sources cited.
+  * Identified emerging glossary terms (prioritization, delegation, psychological safety, ambiguity tolerance).
+  * Reviewed risks; confirmed exam-period mitigation still adequate.
+* Challenges:
+  * Distilling overlapping soft-skill terms without redundancy.
+* Key Learnings:
+  * PM impact centers on clarity, flow, and stakeholder confidence more than artifact volume.
+  * Myth busting reframes expectations, enabling focus on facilitation & risk navigation.
+* Plan Next Week:
+  * Begin Module 3 capture; run glossary extraction script to formalize new terms.
+  * Evaluate if any new risk needs formal addition (potential glossary backlog).
+
+---
+
 (Add weekly dated sections at top: Week X: YYYY-MM-DD - YYYY-MM-DD)
 
 Template:

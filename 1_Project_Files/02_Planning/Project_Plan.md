@@ -6,7 +6,7 @@
 | ID | Phase / Task | Duration | Start | End | Status | Notes |
 |----|--------------|----------|-------|-----|--------|-------|
 | 1 | Initiation & Charter | 1 week | 2025-09-01 | 2025-09-07 | In Progress | Charter draft 0.1
-| 2 | Course 1: Foundations | 3 weeks | 2025-09-08 | 2025-09-28 | Planned | Includes quizzes & notes
+| 2 | Course 1: Foundations | 3 weeks | 2025-09-08 | 2025-09-28 | In Progress | Modules 1-2 synthesized
 | 3 | Course 2: Initiation | 3 weeks | 2025-09-29 | 2025-10-19 | Planned | Adjust for midterms buffer
 | 4 | Course 3: Planning | 3 weeks | 2025-10-20 | 2025-11-09 | Planned | Risk focus
 | 5 | Course 4: Execution | 4 weeks | 2025-11-10 | 2025-12-07 | Planned | Longer content
@@ -47,7 +47,7 @@
 ## 7. Change Log
 | Date | Change | Impact | Decision |
 |------|--------|--------|----------|
-| (empty) |  |  |  |
+| 2025-09-01 | Logged completion of Course 1 Module 2 synthesis | On track (no re-baseline) | Continue Module 3 capture next |*** End Patch
 
 ## 8. Communication Plan (Lightweight)
 - Self-updates via journal; milestone recap appended to Charter Approval section when reached.  

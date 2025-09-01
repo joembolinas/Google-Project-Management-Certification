@@ -7,5 +7,7 @@
 | R03 | Bandwidth instability affects video access | Medium | Medium | Pre-download / shift to readings & summaries offline | Self | Open |
 | R04 | Scope creep: exploring unrelated certifications | Low | Medium | Log ideas in separate list; defer until closing phase | Self | Open |
 | R05 | Slippage in early course cascades into capstone crunch | Medium | High | Weekly variance review; re-baseline if >7 days slip | Self | Open |
+| R06 | Glossary backlog (>5 uncaptured #gloss tags) reduces clarity later | Low | Medium | Run Glossary-Extract after each module; cap backlog at 5 | Self | Open |
+| R07 | Expectation drift: stakeholders (future reviewers) misinterpret PM role due to myths | Low | Medium | Maintain myths vs reality section; reinforce value framing in reflections | Self | Open |
 
 Legend: Probability / Impact qualitative (Low/Medium/High). Update Status field (Open → Monitoring → Mitigated → Closed).
