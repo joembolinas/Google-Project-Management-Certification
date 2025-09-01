@@ -12,12 +12,12 @@ Sources:
 - `src/Course1-Module1/1.8.Transferable project management skills.txt`
 - `src/Course1-Module1/1.9.X Path to becoming a project manager.txt`
 - `src/Course1-Module1/1.10.From certificate to career success.txt`
+ - `src/Course1-Module1/1.11.Explore project management roles.txt`
+ - `src/Course1-Module1/1.12.Finding the perfect role.txt`
 
 Uncited Raw Artifacts (Module 1 – retained / pending synthesis or intentionally excluded):
 - `src/Course1-Module1/1.2.SUBTITLES.txt` (subtitle aggregate; not substantive content)
 - `src/Course1-Module1/1.5.MISSING.txt` (structural placeholder; no content)
-- `src/Course1-Module1/1.11.Explore project management roles.txt` (to be synthesized)
-- `src/Course1-Module1/1.12.Finding the perfect role.txt` (to be synthesized)
 - `src/Course1-Module1/1.13.subtitle.txt` (subtitle fragment)
 
 ## Overview
@@ -62,6 +62,8 @@ Primary PM responsibilities emphasized early:
 ## Reflection
 
 Early emphasis clarifies that PM is a discipline of structured value delivery rather than just task tracking. The framing of everyday experiences (events, school work) as proto-projects helps internalize transferability and builds confidence ahead of more formal methodologies in later courses.
+
+Added Perspective (1.11, 1.12): Applying formal PM scaffolding (mini charters, simple risk lists, lightweight retros) to personal or volunteer initiatives accelerates skill translation. Reframing prior informal achievements with precise PM vocabulary (scope, stakeholder, constraint) creates persuasive career narratives and mitigates imposter feelings.
 
 ---
 
