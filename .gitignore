@@ -1,10 +1,20 @@
 
 
-/net-commander
+# Development and tooling directories
 .github/
 .vscode/
 
+# Legacy and archived content
+archive/
+notes/
 
+# Internal workflow and setup files
+end-to-end.md
+progress-log.md
+setup.md
+
+# Historical entries (keeping for reference)
+/net-commander
 -workflow.md
  
 # Repo-specific additions
