@@ -20,8 +20,13 @@ Central reference for key Project Management terms captured during the Google PM
 | Term | Concise Definition | Source File(s) | Notes |
 |------|--------------------|----------------|-------|
 | (placeholder) |  |  |  |
-
+| ambiguity tolerance | Ability to make progress with partial info while surfacing assumptions early | Course 1 Module 2 sources | First introduced Module 2 |
+| delegation | Assigning the right task to the right person with clear acceptance criteria | Course 1 Module 2 sources |  |
+| prioritization | Sequencing work to maximize value delivery under constraints | Course 1 Module 2 sources |  |
+| psychological safety | Environment where team members feel safe to speak up without fear of blame | Course 1 Module 2 sources | Enables early risk surfacing |
+| stakeholder alignment | Shared understanding of goals, scope, and success criteria across stakeholders | Course 1 Module 2 sources |  |
 ## Pending Queue
+Last updated: 2025-09-01 (Module 2 terms added)
 List candidate terms you tagged but have not yet validated for stable inclusion.
 - (placeholder)
 

@@ -35,7 +35,7 @@ Target Finish: YYYY-MM-DD
 
 ## ✅ Status
 
-- [X] Course 1: Foundations — In progress (Module 1 logged)
+- [X] Course 1: Foundations — In progress (Modules 1–2 synthesized)
 - [ ] Course 2: Project Initiation
 - [ ] Course 3: Project Planning
 - [ ] Course 4: Project Execution

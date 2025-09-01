@@ -8,7 +8,7 @@ Centralized map of key project artifacts with purpose and update cadence.
 | Project Plan | `1_Project_Files/02_Planning/Project_Plan.md` | Baseline schedule & monitoring approach | Weekly review / on slip | Charter, Journal |
 | Risk Register | `1_Project_Files/02_Planning/Risk_Register.md` | Track risks & mitigations | Weekly scan | Plan, Journal |
 | Weekly Journal | `1_Project_Files/03_Execution/Weekly_Project_Journal.md` | Reflection & progress log | Weekly (top insertion) | Daily study notes |
-| Course 1 Summary | `1_Project_Files/03_Execution/Course_Notes/Course_1_Foundations.md` | Structured foundational concepts | Iterative during Course 1 | `src/1.*.txt` |
+| Course 1 Summary | `1_Project_Files/03_Execution/Course_Notes/Course_1_Foundations.md` | Structured foundational concepts (Modules 1-2 synthesized) | Iterative during Course 1 | `src/1.*.txt`, `src/Course1-Module2/2.*` |
 | Course 2–6 Summaries | `1_Project_Files/03_Execution/Course_Notes/` | Subsequent course structured notes | As each course progresses | Raw transcripts |
 | Lessons Learned Draft | `1_Project_Files/04_Closing/Lessons_Learned_Report_Blog_Draft.md` | Narrative for public blog | After Course 3 midpoint; finalize at end | Charter, Plan, Journal |
 | Legacy Reviews (Archived) | `archive/legacy_notes/*.md` | Historical pre-structure summaries | No further expansion (read-only) | Historical |
