@@ -6,3 +6,7 @@
 
 
 -workflow.md
+ 
+# Repo-specific additions
+# Ignore any stray root-level image placeholder previously moved to banner folder
+image.png
