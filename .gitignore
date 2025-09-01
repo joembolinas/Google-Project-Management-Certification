@@ -1,8 +1,22 @@
 
 
-/net-commander
+# Development and tooling directories
 .github/
 .vscode/
 
+# Legacy and archived content
+archive/
+notes/
 
+# Internal workflow and setup files
+end-to-end.md
+progress-log.md
+setup.md
+
+# Historical entries (keeping for reference)
+/net-commander
 -workflow.md
+ 
+# Repo-specific additions
+# Ignore any stray root-level image placeholder previously moved to banner folder
+image.png
