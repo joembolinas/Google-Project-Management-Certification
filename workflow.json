@@ -251,6 +251,49 @@
     ]
   },
   "glossary_update_rule": "Add term only once; if reintroduced, reference original term without redefining. Origin tag (e.g., [M2]) appended on first creation.",
+  "naming_rules": {
+    "raw_transcript_pattern": "^[0-9]+\\.[0-9]+\\.[A-Za-z0-9 ].+\\.txt$",
+    "placeholder_pattern": "^[0-9]+\\.[0-9]+\\.MISSING\\.txt$",
+    "non_citable_classifications": ["ASSESSMENT", "OTHER", "SUBTITLES", "MISSING_PLACEHOLDER"],
+    "citable_determination": "File is citable if it matches raw_transcript_pattern AND is not classified as assessment/activity/placeholder/subtitles",
+    "punctuation_normalization": [":", "/", "?"],
+    "notes": [
+      "Spaces allowed; collapse multiple spaces to one",
+      "ASCII apostrophes and hyphens only",
+      "Do not rename after citation except to fix blocking typo (must update all Sources references)"
+    ]
+  },
+  "note_format_standards": {
+    "raw_capture": {
+      "one_concept_per_line": true,
+      "allow_bold_definitions_per_block_max": 3,
+      "gloss_tag_pattern": "#gloss:[a-z0-9 _-]+",
+      "uncertainty_marker": "??"
+    },
+    "mini_capture_stub": [
+      "### Module N Mini Capture (Draft)",
+      "- Bullet concept A",
+      "- Bullet concept B"
+    ],
+    "module_sections_order": [
+      "Overview",
+      "Key Concepts",
+      "Definitions",
+      "Tools / Techniques",
+      "Examples / Scenarios",
+      "Sources",
+      "Module Reflection"
+    ],
+    "sources_block": {
+      "heading_variant": "inline",
+      "list_item_format": "- `src/.../<filename>.txt`"
+    },
+    "uncited_block_label": "Uncited Raw Artifacts",
+    "validation_expectations": [
+      "Pre-synthesis: all module files uncited",
+      "Post-synthesis: only assessments/placeholders uncited"
+    ]
+  },
   "commit_patterns": {
     "module_synthesis": "feat(module2): synthesize & reflect (Course 1 Foundations)",
     "journal_update": "docs(journal): add week reflection YYYY-MM-DD",
