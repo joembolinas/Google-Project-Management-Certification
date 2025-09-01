@@ -28,6 +28,8 @@ Purpose: This repo is a structured personal learning project for completing the 
 - Avoid duplicating the same concept in multiple curated files—reference instead (e.g., link to `setup.md` instead of restating process steps elsewhere). New course/module summaries should go in `1_Project_Files/03_Execution/Course_Notes/`; if updating an older `notes/` file, add a brief "Superseded by: <new file>" line at top.
 - Preserve emoji already used (e.g., section icons) but do not introduce inconsistent styling.
 
+Deprecation Note (2025-09-01): Standalone `resources.md` retired; all active links consolidated into README "Resource Snapshot". Do not recreate the file—update snapshot section instead.
+
 ### Sources & Traceability (Updated 2025-09-01)
 - Each module section in course notes must include a plain `Sources:` line (no heading hashes) followed by markdown list items where each item contains exactly one backticked relative path to a numbered raw transcript (`src/...`).
 - Legacy aggregate transcript files (single number + `.md` like `2.md`) are prohibited; if encountered they must be renamed to `<module>-legacy-compilation.md` (no leading number) with a supersession note so validation ignores them.
@@ -36,6 +38,27 @@ Purpose: This repo is a structured personal learning project for completing the 
 - Validation script classification categories: `MISSING_PLACEHOLDER`, `SUBTITLES`, `ASSESSMENT`, `OTHER` are used to summarize uncited raw artifacts.
 - Acceptable heading variants the script recognizes: `Sources:` inline or `## Sources` (prefer the inline `Sources:` form to minimize noise).
 - When adding new transcripts ensure UTF-8 characters (apostrophes, dashes) are preserved to avoid path encoding mismatches (e.g., smart apostrophes) that can trigger false "Missing" reports.
+
+### Naming & Formatting Conventions (Module 3 Forward)
+- Raw transcript filenames: `<module>.<sequence>.<Title>.txt` (spaces allowed; replace platform punctuation (`: / ?`) with a single space).
+- Non-citable artifacts (quizzes, graded assignments, plugin activities) remain uncited: list under `Uncited Raw Artifacts` with classification (`ASSESSMENT`, `OTHER`).
+- Missing transcript placeholder: `<module>.<sequence>.MISSING.txt` (classification `MISSING_PLACEHOLDER`; never cited).
+- Do not retroactively rename a file after it is cited unless correcting a breaking typo; if changed, update every Sources reference in affected notes and log in progress-log.
+- Normalize smart punctuation to ASCII (apostrophes `'`, hyphen `-`) in filenames to keep validator stable.
+- Raw capture rules:
+  - One concept/definition per line; minimal punctuation.
+  - First occurrence glossary tagging only: `#gloss:<term>` (idempotent).
+  - Emphasis: bold at most 1–3 definitions per micro-block: `**Term:** definition #gloss:term`.
+  - Use `??` to mark uncertainty (resolve before synthesis if possible).
+  - Never embed reflective prose or synthesis paragraphs inside raw transcripts.
+- Mini Capture stub inside course notes precedes full synthesis:
+  ```
+  ### Module N Mini Capture (Draft)
+  - Bullet concept A
+  - Bullet concept B
+  ```
+- Synthesis mapping: Each Mini Capture bullet becomes a Key Concept, Tool/Technique, or Example entry; reflection derives from journal & micro-goal outcomes.
+- Validation expectations pre-synthesis: All module content files appear uncited; after synthesis only assessments/placeholders remain uncited.
 
 ## Safe Automation Boundaries
 - Assistants may: add new dated progress entries, summarize transcript chunks into structured notes, standardize formatting (headings, tables), add new resource links (grouped).
@@ -111,6 +134,48 @@ This workflow governs daily study, module synthesis, weekly checkpoints, and cou
 ### Optional Future Automation (Not Yet Implemented)
 - Script to list transcripts missing from any Sources block.
 - Glossary tag extractor to build/update a consolidated glossary.
+
+### Automation Helpers (Repository Scripts)
+
+Use the provided PowerShell scripts to streamline daily and weekly routine tasks:
+
+| Script | Purpose | Typical Use | Key Parameters |
+|--------|---------|-------------|----------------|
+| `scripts/Add-DailyMicroGoal.ps1` | Insert or update today's block in `progress-log.md` with a Micro-goal line | Start of study session | `-MicroGoal "Capture 3 defs from 3.2–3.3"` |
+| `scripts/Update-WeeklyJournal.ps1` | Ensure current week section exists & optionally append a completed task note | After finishing a micro-goal or weekly checkpoint | `-TaskNote "Met micro-goal (scope creep, stakeholder map)"` |
+| `scripts/Tag-GlossaryCandidates.ps1` | Append `#gloss:<term>` tags to raw transcript lines where term first appears | After a micro-block review (2–3 lectures) | `-Terms "scope creep" "stakeholder map" -Paths src/Course1-Module3/3.2.Stakeholders.txt` |
+| `scripts/Glossary-Extract.ps1` | List newly tagged glossary terms not yet in `glossary.md` | End of module or weekly review | (no mandatory params) |
+| `scripts/Validate-Sources.ps1` | Verify every cited source exists & find uncited raw artifacts | Before committing module synthesis | (no mandatory params) |
+
+Recommended cadence:
+1. Morning/Opening: Run `Add-DailyMicroGoal.ps1`.
+2. After capturing 2–3 lectures: Run `Tag-GlossaryCandidates.ps1` then `Glossary-Extract.ps1` (optional commit if meaningful delta).
+3. End of day: Run `Update-WeeklyJournal.ps1 -TaskNote "Met micro-goal ..."`.
+4. End of module: Run `Validate-Sources.ps1`, then `Glossary-Extract.ps1` to confirm no dangling tags before synthesis commit.
+
+Example session commands:
+```
+pwsh scripts/Add-DailyMicroGoal.ps1 -MicroGoal "Capture 3 definitions from 3.2–3.3"
+pwsh scripts/Tag-GlossaryCandidates.ps1 -Terms "scope creep" "escalation path" -Paths src/Course1-Module3/3.2.Stakeholders.txt
+pwsh scripts/Glossary-Extract.ps1
+pwsh scripts/Update-WeeklyJournal.ps1 -TaskNote "Met micro-goal (scope creep, escalation path, stakeholder map)"
+pwsh scripts/Validate-Sources.ps1
+```
+
+Prompt Templates (Chat / Copilot):
+* "Generate daily micro-goal for Module 3 stakeholder lectures and log it." → (internally calls Add-DailyMicroGoal).
+* "Tag glossary candidates 'scope creep' and 'stakeholder map' in Module 3 transcripts and show new terms." → (Tag-GlossaryCandidates + Glossary-Extract).
+* "Update weekly journal with note: Completed Module 3 risk concepts micro-goal." → (Update-WeeklyJournal).
+* "Validate sources before committing Module 3 synthesis." → (Validate-Sources).
+
+Guiding Principle: Automations reduce friction but never replace reflective judgment—always scan changed lines before committing.
+
+Future-Proofing Notes:
+- Scripts are module-agnostic: they derive dates and week spans dynamically—no hardcoded module numbers—so remain valid across all six courses.
+- Glossary tagging is idempotent: re-running with the same term set will not duplicate tags (script checks existing `#gloss:<term>`).
+- Weekly journal numbering increments sequentially; if historical weeks are inserted later, numbers still reflect insertion order (semantic value > strict calendar ISO number).
+- Validation excludes subtitle and placeholder files, preventing noise escalation as transcript volume grows.
+- If repository structure expands (e.g., Course2-Module1), scripts continue operating because they scan `src/` recursively unless constrained by `-Paths`.
 
 ### Principles
 - Raw stays messy (`src/`); polish only in `Course_Notes`.
