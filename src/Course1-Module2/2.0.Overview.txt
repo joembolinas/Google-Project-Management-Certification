@@ -1,0 +1,1 @@
+Module 2 Overview placeholder (renamed from original 2.md). Contains high-level introductory context captured in structured notes; detailed concepts synthesized in Course_1_Foundations.md Module 2 section.
