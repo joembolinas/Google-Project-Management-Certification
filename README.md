@@ -6,6 +6,8 @@ Get on the fast track to a career in project management. Learn in-demand skills 
 
 Complete the Google Project Management Professional Certificate and build a project management portfolio.
 
+To successfully complete the Google Project Management Professional Certificate on Coursera by ____. The primary objective is to gain a practical, industry-recognized understanding of project management principles, methodologies, and tools to enhance my resume and qualify for tech internships in ___.
+
 ## 📅 Timeline
 
 Start Date: 2025-08-16
@@ -30,7 +32,6 @@ Target Finish: YYYY-MM-DD
 - `Foundations of Project Management/` → Images + legacy course-specific progress log
 - `progress-log.md` → High-level learning diary (global)
 - `resources.md` → Reference links and templates
-
 
 ## ✅ Status
 

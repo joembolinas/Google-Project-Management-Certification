@@ -1,3 +1,8 @@
 *src/
 
 /net-commander
+.github/
+.vscode/
+
+
+-workflow.md

@@ -1,3 +1,7 @@
+# ARCHIVED: Course-Specific Progress Log (Foundations)
+
+> Archived 2025-09-01. Superseded by root `progress-log.md` (global chronology) and `1_Project_Files/03_Execution/Weekly_Project_Journal.md` (weekly reflections). Retained read-only for historical traceability; do not append new entries here.
+
 # [Welcome to the Google Project Management Certificate](https://www.coursera.org/learn/project-management-foundations/lecture/t28f8/welcome-to-the-google-project-management-certificate?trk_ref=coach_copy)  Aug 16, 2025
 
 This course provides an introduction to the fundamentals of project management, aimed at helping learners develop essential skills for entry-level project management roles.
