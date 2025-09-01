@@ -1,4 +1,29 @@
-# Google Project Management: Professional Certificate
+
+<div align="center">
+
+<picture>
+	<!-- Dark mode version (add file later) -->
+	<source media="(prefers-color-scheme: dark)" srcset="Foundations of Project Management/image/banner/pm-banner-dark.png">
+	<!-- Light mode version (add file later) -->
+	<source media="(prefers-color-scheme: light)" srcset="Foundations of Project Management/image/banner/pm-banner-light.png">
+	<img alt="Project management journey banner" src="Foundations of Project Management/image/banner/pm-banner-light.png" width="100%">
+</picture>
+
+<h1>Google Project Management: Professional Certificate</h1>
+
+<p>Structured private knowledge base for capturing raw transcripts, synthesizing course insights, and producing a polished public learning narrative.</p>
+
+<!-- Badges (dynamic placeholders; update targets as progress evolves) -->
+<p>
+	<img alt="Start Date" src="https://img.shields.io/badge/Start-2025--08--16-blue" />
+	<img alt="Current Course" src="https://img.shields.io/badge/Course-1%20Foundations-brightgreen" />
+	<img alt="Modules Synthesized" src="https://img.shields.io/badge/Modules%20Synthesized-2/6-success" />
+	<img alt="Workflow" src="https://img.shields.io/badge/Workflow-Raw→Synthesis→Reflect-purple" />
+</p>
+
+</div>
+
+> Banner images are placeholders. To activate, add `pm-banner-light.png` and `pm-banner-dark.png` (optional) under `Foundations of Project Management/image/banner/`. If you prefer a single image (e.g., AI generated), store it as `pm-banner-light.png` and omit the dark variant.
 
 Get on the fast track to a career in project management. Learn in-demand skills with Google experts and build a PM portfolio. Self-paced; no degree or prior experience required.
 
@@ -20,9 +45,25 @@ Target Finish: YYYY-MM-DD
 - Legacy Course 1 review (superseded): `archive/legacy_notes/course1-learning-objectives-review.md`
 - Course log (Foundations – archived): `Foundations of Project Management/progress-log.md`
 - Overall progress log: `progress-log.md`
-- Resources: `resources.md`
 - Transcripts/notes dump: `src/`
 - Phased workspace: `1_Project_Files/`
+
+### Resource Snapshot (Centralized)
+
+**Official Link**
+- Google Project Management Certificate: https://www.coursera.org/professional-certificates/google-project-management
+
+**Tools & Templates**
+- Trello – lightweight kanban: https://trello.com/
+- Asana – task & timeline management: https://asana.com/
+- Gantt Chart Template (Smartsheet): https://www.smartsheet.com/free-gantt-chart-excel-templates
+
+**Other References**
+- PMI (templates & standards): https://www.pmi.org/
+- Scrum Guide: https://scrumguides.org/index.html
+- Scrum.org Resources: https://www.scrum.org/resources
+
+Governance: Former standalone `resources.md` merged here to reduce fragmentation (avoid maintaining duplicate link lists).
 
 ## 📂 Current Folder Structure
 
@@ -31,7 +72,7 @@ Target Finish: YYYY-MM-DD
 - `archive/legacy_notes/` → Archived legacy summaries (superseded)
 - `Foundations of Project Management/` → Images + legacy course-specific progress log
 - `progress-log.md` → High-level learning diary (global)
-- `resources.md` → Reference links and templates
+	(Resources previously in `resources.md` now embedded in README Resource Snapshot)
 
 ## ✅ Status
 
