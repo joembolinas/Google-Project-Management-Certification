@@ -33,7 +33,9 @@ if (-not $RepoRoot) {
  #  - Legacy aggregate files like `2.md` that collapse multiple transcripts (pattern: ^\d+\.md$ with no further dot)
  $actual = Get-ChildItem -Path $srcRoot -Recurse -File |
      Where-Object {
-         $_.Name -match '^\d+\.' -and $_.Name -notmatch '^\d+\.md$'
+         $_.Name -match '^\d+\.' -and 
+         $_.Name -notmatch '^\d+\.md$' -and 
+         $_.Name -notmatch 'subtitle|SUBTITLE|SUBTITLES'
      } |
      ForEach-Object { ($_.FullName.Substring($RepoRoot.Length+1)) -replace '\\','/' }
 

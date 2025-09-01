@@ -1,5 +1,7 @@
 # Course 1: Foundations of Project Management
 
+<!-- Module 1 synthesis extended with transcripts 1.11 & 1.12 on 2025-09-01 -->
+
 # Module 1
 
 Sources:
